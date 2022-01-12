@@ -1,0 +1,17 @@
+﻿@model HotelModel
+
+@using (Html.BeginForm("Update", "Hotel", FormMethod.Post))
+{
+    <div>
+        City @Html.LabelFor(a=>a.RoomsCapacity)
+    </div>
+    <div>
+        @Html.EditorFor(a=>a.RoomsCapacity)
+        <div class="text-danger">
+            <small>
+                @Html.ValidationMessageFor(a=>a.RoomsCapacity)
+            </small>
+        </div>
+    </div>
+    <input type="submit" value="Submit" />
+}

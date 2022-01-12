@@ -1,0 +1,28 @@
+﻿@model List<CityModel>
+
+<div class="d-flex w-100 justify-content-between">
+    @Html.ActionLink("Create", "Create", "Hotel", new {}, new { @class= "btn btn-primary" })
+</div>
+<hr />
+<table class="table">
+    <tr>
+        <th>Hotel Id</th>
+        <th>Hotels</th>
+        <th>Cleaners</th>
+        
+    </tr>
+    @foreach (var hotel in @Model)
+    {
+        <tr>
+            <td>@hotel.Id</td>
+            <td>@hotel.Hotels</td>
+            <td>@hotel.Cleaners</td>
+            
+            <td>
+                @Html.ActionLink("Delete", "Delete", "Hotel", new { id = hotel.Id },  new { @class= "btn btn-danger" })
+                @Html.ActionLink("Edit", "Edit", "Hotel", new { id = hotel.Id },  new { @class= "btn btn-success" })
+                @Html.ActionLink("View Hotel", "", "Hotel", new { id = hotel.Id },  new { @class= "btn btn-primary" })
+            </td>
+        </tr>
+    }
+</table>

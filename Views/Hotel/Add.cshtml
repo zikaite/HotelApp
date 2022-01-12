@@ -1,0 +1,19 @@
+﻿@model HotelModel
+
+@using (Html.BeginForm("Add", "Hotel", FormMethod.Post))
+{
+
+    <div>
+        Hotel @Html.LabelFor(a=>a.CityId)
+    </div>
+    <div>
+        @Html.EditorFor(a=>a.CityId)
+        <div class="text-danger">
+            <small>
+                @Html.ValidationMessageFor(a=>a.CityId)
+            </small>
+        </div>
+    </div>
+    <input type="submit" value="Submit" />
+
+}
